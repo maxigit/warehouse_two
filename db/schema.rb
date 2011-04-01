@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110330084608) do
+ActiveRecord::Schema.define(:version => 20110401105111) do
 
   create_table "asset_audits", :primary_key => "dont_use_id", :force => true do |t|
     t.string   "uuid",                 :limit => 36, :null => false
@@ -1317,17 +1317,17 @@ ActiveRecord::Schema.define(:version => 20110330084608) do
   add_index "samples", ["uuid"], :name => "index_samples_on_uuid"
 
   create_table "studies", :primary_key => "dont_use_id", :force => true do |t|
-    t.string   "uuid",                       :limit => 36, :null => false
+    t.string   "uuid",                           :limit => 36, :null => false
     t.integer  "internal_id"
     t.string   "name"
     t.string   "reference_genome"
     t.boolean  "ethically_approved"
     t.string   "faculty_sponsor"
-    t.string   "state",                      :limit => 50
-    t.string   "study_type",                 :limit => 50
+    t.string   "state",                          :limit => 50
+    t.string   "study_type",                     :limit => 50
     t.text     "abstract"
     t.string   "abbreviation"
-    t.string   "accession_number",           :limit => 50
+    t.string   "accession_number",               :limit => 50
     t.text     "description"
     t.boolean  "is_current"
     t.datetime "checked_at"
@@ -1340,6 +1340,9 @@ ActiveRecord::Schema.define(:version => 20110330084608) do
     t.string   "ena_project_id"
     t.string   "study_title"
     t.string   "study_visibility"
+    t.string   "ega_dac_accession_number"
+    t.string   "array_express_accession_number"
+    t.string   "ega_policy_accession_number"
   end
 
   add_index "studies", ["abbreviation"], :name => "index_studies_on_abbreviation"
